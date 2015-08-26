@@ -8,7 +8,7 @@ lsi: false
 # ------------------------------------------------------------------------------
 ## customization ##
 
-exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock, *.bak]
+exclude: [zold, LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
 
 # more configure options @ _data/theme.yml
 title: Happy Blooming
@@ -27,4 +27,5 @@ kramdown:
 
 highlighter: pygments
 paginate: 20
+
 
