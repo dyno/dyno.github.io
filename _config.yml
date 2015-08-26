@@ -1,0 +1,30 @@
+# ------------------------------------------------------------------------------
+## github overwrite ##
+
+safe: true
+lsi: false
+#source: your top-level directory
+
+# ------------------------------------------------------------------------------
+## customization ##
+
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock, *.bak]
+
+# more configure options @ _data/theme.yml
+title: Happy Blooming
+name: Dyno Fu
+#email: dyno.fu@gmail.com
+email: "'ZHluby5mdUBnbWFpbC5jb20='.decode('base64')"
+#url: http://dyno.github.io
+url: http://blog.dynofu.me
+description: 
+    Reality, with all its ambiguities, does the job just fine. - GEORGE DYSON
+
+# format system
+markdown: kramdown
+kramdown:
+    input: GFM
+
+highlighter: pygments
+paginate: 20
+

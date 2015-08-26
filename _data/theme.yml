@@ -1,0 +1,31 @@
+# Theme customization - please change from the defaults!
+
+# Color for top bar, links, etc
+highlight_color: '#822e2e'
+
+# Profile links on the left sidebar, leave blank to ignore
+social:
+  github: dyno
+  #bitbucket: dyno
+  #hacker_news: 
+  #stackexchange: 221794
+  stackoverflow: 221794
+  #twitter: dynofu
+  #facebook: 
+  #tumblr:
+  linkedin: dynofu
+  #gplus: 
+  gravatar: 1f02cce059c0fc8ca0f4012900bd00f0
+
+# "Hi, I'm _______"
+name: Dyno Fu
+#email: dyno.fu@gmail.com
+email: python -c "print 'ZHluby5mdUBnbWFpbC5jb20='.decode('base64')"
+tagline: "Reality, with all its ambiguities, does the job just fine. - GEORGE DYSON"
+
+# Google Analytics key, leave blank to ignore
+google_analytics_key: UA-66817112-1
+
+# Toggle "Postings are my own" disclaimer in footer
+show_disclaimer: false
+
