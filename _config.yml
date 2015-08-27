@@ -10,6 +10,7 @@ lsi: false
 
 exclude: [zold, LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
 
+# https://github.com/swanson/lagom 
 # more configure options @ _data/theme.yml
 title: Happy Blooming
 name: Dyno Fu
@@ -20,10 +21,14 @@ url: http://blog.dynofu.me
 description: 
     Reality, with all its ambiguities, does the job just fine. - GEORGE DYSON
 
-# format system
-markdown: kramdown
-kramdown:
-    input: GFM
+# http://ajoz.github.io/2014/06/29/i-want-my-github-flavored-markdown/
+# Build settings
+markdown: redcarpet
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+
+redcarpet:
+  extensions: [ "tables", "autolink", "strikethrough", "space_after_headers",
+		"with_toc_data", "fenced_code_blocks" ]
 
 highlighter: pygments
 paginate: 20
