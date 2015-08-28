@@ -1,0 +1,74 @@
+/* ---- topbar ---- */
+body {
+  border-top: 7px solid #902020;
+}
+
+/* ---- sidebar ---- */
+.sidebar {
+    padding-top: 25px;
+}
+
+#bio {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border: dotted #ddd;
+  border-width: 1px 0;
+  padding-top: 15px;
+}
+
+#avatar {
+  text-align: center;
+}
+
+#gravatar {
+  margin-bottom: 25px;
+  width: 180px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#social {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#stalker {
+    text-align: center;
+    height: 18px;
+}
+
+/* ---- post ----*/
+#home h2 {
+  color: #902020;
+}
+
+.content {
+  margin-top: 10px;
+  border-left: 1px solid #DDD;
+  padding-left: 40px;
+}
+
+/* ---- footer ----*/
+.footer {
+  font-size: 80%;
+  color: #666;
+  border-top: 4px solid #eee;
+  overflow: hidden;
+}
+
+.disclaimer p {
+  margin-top: 5px;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ---- links ---- */
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
