@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sample post - Format Reference
+title: Sample post - Markdown Format Reference
 categories:
 - post
 ---

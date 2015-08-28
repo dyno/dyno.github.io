@@ -5,13 +5,14 @@ categories:
 - post
 ---
 
-* How to use custom domain with github pages? something like, `blog.dynofu.me -> dyno.github.io`
+* __How to use custom domain with github pages?
+   something like, `blog.dynofu.me -> dyno.github.io`__
 > you need to setup the CNAME file, https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/
 
-* Why isn't the page showing up after I commited to the github pages repository?
+* __Why isn't the page showing up after I commited to the github pages repository?__
 > https://help.github.com/articles/troubleshooting-github-pages-build-failures/
 
-* I've installed `kramdown`, why do I still got `Missing dependency: kramdown`?
+* __I've installed `kramdown`, why do I still got `Missing dependency: kramdown`?__
 > I bet you are using `bundler` and running on Mac. check  
 > http://stackoverflow.com/questions/31417469/jekyll-ruby-kramdown-missing-dependency/32233986#32233986  
 > If you have the `kramdown` problem or donnot know what all these different markdown renders are, 

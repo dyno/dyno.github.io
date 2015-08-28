@@ -49,6 +49,14 @@ body {
   padding-left: 40px;
 }
 
+blockquote {
+    margin: 0px;
+    padding: 0px 20px 0 15px;
+    border-left: 2px solid #ddd;
+    line-height: 24px;
+    color: #777;
+}
+
 /* ---- footer ----*/
 .footer {
   font-size: 80%;
