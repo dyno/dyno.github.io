@@ -80,3 +80,24 @@ a:visited {
     text-decoration: none;
 }
 
+h1 {
+    color: #902020;
+    font-size: 3.0rem;
+    font-weight: 300;
+}
+h2 {
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 300;
+}
+h3 {
+    font-size: 2.0rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+code, pre {
+    font-size: .9em;
+    overflow: auto;
+}
+
