@@ -88,13 +88,19 @@ h1 {
 h2 {
     font-size: 2.4rem;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 500;
 }
 h3 {
     font-size: 2.0rem;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
 }
+h4 {
+    font-size: 2.0rem;
+    font-style: italic;
+    font-weight: 200;
+}
+
 
 code, pre {
     font-size: .9em;

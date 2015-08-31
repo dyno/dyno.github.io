@@ -5,11 +5,13 @@ categories:
 - post
 ---
 
-## The Result: Median Sale Price Heat Map ##
-
   This is part of my research effort to find a home during this Apr/May period.
 Before that I never know there are [101 cities](http://en.wikipedia.org/wiki/List_of_cities_and_towns_in_the_San_Francisco_Bay_Area)
 around [San Francisco Bay Area](http://en.wikipedia.org/wiki/San_Francisco_Bay_Area) ...
+
+---
+
+## The Result: Median Sale Price Heat Map ##
 
   I think this median sale price is the most important affordability factor to consider
 of an area. And here is the median sale price by city - data at subdistrict level may represent
