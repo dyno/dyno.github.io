@@ -27,5 +27,5 @@ tagline: "Reality, with all its ambiguities, does the job just fine. - GEORGE DY
 google_analytics_key: UA-66817112-1
 
 # Toggle "Postings are my own" disclaimer in footer
-show_disclaimer: false
+show_disclaimer: true
 
