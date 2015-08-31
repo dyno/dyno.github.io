@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The guide to find Linux kernel debuginfo package
+title: The Guide to Find Linux Kernel Debuginfo Package
 categories:
 - post
 ---
