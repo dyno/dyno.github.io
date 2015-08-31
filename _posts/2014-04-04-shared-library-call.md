@@ -6,7 +6,7 @@ categories:
 ---
 
 I am wondering how the execution flow was branched to a function implemented in shared library,
-and the reference links in the "extending read" section gives enough info about the theory.
+and the reference links in the "_Extended Reading_" section gives enough info about the theory.
 I only make the following experiment to show the process. `PLT` and `GOT` are the key to the translation.
 
 * PLT (Procedure Linkage Table)
