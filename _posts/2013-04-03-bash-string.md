@@ -12,7 +12,7 @@ categories:
 set -v
 
 s=" hello world! racn4 "
-# 01234567890123456789
+#  01234567890123456789
 
 # length
 echo ${#s}
