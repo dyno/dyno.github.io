@@ -1,3 +1,11 @@
+---
+layout: post
+title: Reference Card
+categories:
+- post
+---
+
+
 ## Bash ##
   - Reference Card, http://www.tldp.org/LDP/abs/html/refcards.html
 
