@@ -5,7 +5,8 @@ categories:
 - post
 ---
 
-How kernel is layouted in memory and in dump file? In this post I'd like to locate `init_task` which is the "Initial task structure" to understand how the _crash utility_, _volatility_ and other tools work. (`linux_banner` is another well known anchor you can try.)
+How does the kernel layout in memory and in dump file?
+Let's do some experiment to understand how the [_crash utility_](http://people.redhat.com/anderson/crash_whitepaper/), [_volatility_](https://github.com/volatilityfoundation/volatility/wiki) and other memory forensics tools work.
 
 ---
 
@@ -40,7 +41,8 @@ LOAD AVERAGE: 0.12, 0.30, 0.15
      WARNING: panic task not found
 ```
 
-`COMMAND: "swapper"`, how `crash` get it?
+`COMMAND: "swapper"`, how `crash` get this `init_task` ("Initial task structure")
+from the memory coredump? (`linux_banner` is another well known anchor you can try.)
 
 ### GDB ###
 
