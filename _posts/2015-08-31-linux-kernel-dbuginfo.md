@@ -69,6 +69,8 @@ symbol: kernel-debuginfo
 ```bash
 zypper search -s 'kernel-default'
 zypper install --download-only --oldpackage kernel-default-debuginfo-3.0.101-0.15.1
+# debuginfo package needs the kernel binary in SLES
+zypper install --download-only --oldpackage kernel-default-base-3.0.101-0.15.1
 # find the rpm in /var/cache/zypp/packages
 ```
 * _I've not yet found an open free online repository for SLES..._
