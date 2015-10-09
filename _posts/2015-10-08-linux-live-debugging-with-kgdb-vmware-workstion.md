@@ -129,7 +129,7 @@ echo 0 > /proc/sys/kernel/sysrq
 # Or with command,
 # sysctl kernel.sysrq = 0
 # And to survive reboot,
-# echo 'kernel.sysrq = 1' >> /etc/sysctl.conf
+# echo 'kernel.sysrq = 0' >> /etc/sysctl.conf
 ```
 
 * Guest
@@ -142,7 +142,7 @@ echo 1 > /proc/sys/kernel/sysrq
 ### Kernel Break/Resume ###
 
 For how to get the source code and debug symbols check my previous post
-[Linux Kernel DebugInfo](/post/2015/08/31/linux-kernel-dbuginfo.html)
+[Linux Kernel DebugInfo](/post/2015/08/31/linux-kernel-dbuginfo.html). 
 attach gdb to the kgdb server,
 
 ```
@@ -155,7 +155,7 @@ gdb debuginfo/usr/lib/debug/boot/vmlinux-4.2.0-14-generic
 now inside the guest,
 
 ```
-# press Alt+Sysrq+g
+# press Alt+SysRq+g
 # OR
 echo g > /proc/sysreq-trigger
 ```
