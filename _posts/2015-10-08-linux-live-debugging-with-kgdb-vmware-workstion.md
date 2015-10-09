@@ -139,7 +139,7 @@ Same thing on guest, just to enable all.
 echo 1 > /proc/sys/kernel/sysrq
 ```
 
-### Kernel Break/Rusume ###
+### Kernel Break/Resume ###
 
 For how to get the source code and debug symbols check my previous post
 [Linux Kernel DebugInfo](/post/2015/08/31/linux-kernel-dbuginfo.html)
