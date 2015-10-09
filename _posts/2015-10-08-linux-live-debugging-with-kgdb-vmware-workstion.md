@@ -41,7 +41,7 @@ https://www.kernel.org/doc/Documentation/sysrq.txt
 Not like a user world application, we use SysRq to break running kernel into debugger.
 
 ## The Goal ##
- Debug Guest OS Linux kernel over virtual serial port.
+ __Debug Guest OS Linux kernel over virtual serial port with VMware Workstation.__
 
 ## Step-by-Step ##
 
