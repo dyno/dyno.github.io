@@ -17,6 +17,15 @@
 
   <link rel="stylesheet" href="/assets/css/all.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="/assets/toc.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#toc').toc({headers: '.content h1, .content h2, .content h3'});
+});
+</script>
+
 </head>
 <body>
   <div class="container">

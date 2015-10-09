@@ -47,6 +47,8 @@ body {
   margin-top: 10px;
   border-left: 1px solid #DDD;
   padding-left: 40px;
+  border-right: 1px solid #DDD;
+  padding-right: 40px;
 }
 
 blockquote {
