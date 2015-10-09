@@ -16,28 +16,32 @@ the code base you are not so familiar with...
 
 ### KGDB ###
 https://www.kernel.org/doc/Documentation/gdb-kernel-debugging.txt
-> The kernel debugger kgdb, hypervisors like QEMU or JTAG-based hardware 
-> interfaces allow to debug the Linux kernel and its modules during runtime 
-> using gdb. Gdb comes with a powerful scripting interface for python. The 
-> kernel provides a collection of helper scripts that can simplify typical 
-> kernel debugging steps. This is a short tutorial about how to enable and use 
-> them. It focuses on QEMU/KVM virtual machines as target, but the examples can 
-> be transferred to the other gdb stubs as well. 
 
+```
+The kernel debugger kgdb, hypervisors like QEMU or JTAG-based hardware
+interfaces allow to debug the Linux kernel and its modules during runtime
+using gdb. Gdb comes with a powerful scripting interface for python. The
+kernel provides a collection of helper scripts that can simplify typical
+kernel debugging steps. This is a short tutorial about how to enable and use
+them. It focuses on QEMU/KVM virtual machines as target, but the examples can
+be transferred to the other gdb stubs as well.
+```
 I actually use VMware Workstation as the virtualization solution...
 
 ### SysRq ###
 https://www.kernel.org/doc/Documentation/sysrq.txt
-> It is a 'magical' key combo you can hit which the kernel will respond to 
-> regardless of whatever else it is doing, unless it is completely locked up. 
-> ... 
-> On x86   - You press the key combo 'ALT-SysRq-<command key>'. Note - Some 
->           keyboards may not have a key labeled 'SysRq'. The 'SysRq' key is 
->           also known as the 'Print Screen' key. Also some keyboards cannot 
->	   handle so many keys being pressed at the same time, so you might 
->	   have better luck with "press Alt", "press SysRq", "release SysRq", 
->	   "press <command key>", release everything. 
 
+```
+It is a 'magical' key combo you can hit which the kernel will respond to
+regardless of whatever else it is doing, unless it is completely locked up.
+...
+On x86   - You press the key combo 'ALT-SysRq-<command key>'. Note - Some
+           keyboards may not have a key labeled 'SysRq'. The 'SysRq' key is
+           also known as the 'Print Screen' key. Also some keyboards cannot
+           handle so many keys being pressed at the same time, so you might
+           have better luck with "press Alt", "press SysRq", "release SysRq",
+           "press <command key>", release everything.
+```
 Not like a user world application, we use SysRq to break running kernel into debugger.
 
 ## The Goal ##
@@ -57,14 +61,14 @@ serial1.fileName = "/tmp/com_ubuntu1510"
 ```
 
 #### ttyS0 or ttyS1? ####
-There might already have other virtual hardware occupies `ttyS0`.
+There might already be another virtual hardware occupies `ttyS0`.
 
-On Host,
+__On Host__
 
 * on one terminal run `socat -d -d /tmp/com_ubuntu1510 tcp-listen:9999` to redirect named pipe to a socket.
 * on another terminal run `telnet 127.0.0.1 9999`
 
-Inside the Guest as root,
+__Inside the Guest as root__
 
 * `echo whatever > /dev/ttyS0`
 
