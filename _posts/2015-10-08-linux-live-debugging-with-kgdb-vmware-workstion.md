@@ -8,50 +8,19 @@ categories:
 Recently, I've been assigned a task to fix our vmhgfs kernel module for Ubuntu 15.10
 which sports a cutting edge Linux 4.2 Kernel. It is not crashing but the file system
 just not work. As a sustaining engineer, live debugging is so valuable to jungle through
-the code base you are not so familiar with...
+the code base i am not so familiar with...
 
 ---
 
-## Concepts ##
-
-### KGDB ###
-https://www.kernel.org/doc/Documentation/gdb-kernel-debugging.txt
-
-```
-The kernel debugger kgdb, hypervisors like QEMU or JTAG-based hardware
-interfaces allow to debug the Linux kernel and its modules during runtime
-using gdb. Gdb comes with a powerful scripting interface for python. The
-kernel provides a collection of helper scripts that can simplify typical
-kernel debugging steps. This is a short tutorial about how to enable and use
-them. It focuses on QEMU/KVM virtual machines as target, but the examples can
-be transferred to the other gdb stubs as well.
-```
-I actually use VMware Workstation as the virtualization solution...
-
-### SysRq ###
-https://www.kernel.org/doc/Documentation/sysrq.txt
-
-```
-It is a 'magical' key combo you can hit which the kernel will respond to
-regardless of whatever else it is doing, unless it is completely locked up.
-...
-On x86   - You press the key combo 'ALT-SysRq-<command key>'. Note - Some
-           keyboards may not have a key labeled 'SysRq'. The 'SysRq' key is
-           also known as the 'Print Screen' key. Also some keyboards cannot
-           handle so many keys being pressed at the same time, so you might
-           have better luck with "press Alt", "press SysRq", "release SysRq",
-           "press <command key>", release everything.
-```
-Not like a user world application, we use SysRq to break running kernel into debugger.
-
 ## The Goal ##
+
  __Debug Guest OS Linux kernel over virtual serial port with VMware Workstation.__
 
 ## Step-by-Step ##
 
 ### Virtual Serial Port ###
 you can add a serial port from the VMware workstation UI as well, but the effect
-is the vmx configure file now has a few more lines for serial port.
+is the same, vmx configure file now has a few more lines for serial port.
 
 ```text
 serial1.present = "TRUE"
@@ -61,6 +30,7 @@ serial1.fileName = "/tmp/com_ubuntu1510"
 ```
 
 #### ttyS0 or ttyS1? ####
+
 There might already be another virtual hardware occupies `ttyS0`.
 
 __On Host__
@@ -183,4 +153,39 @@ Copy the symbol file loading gdb script to the host and break into debugger,
 ```
 
 ## Miscellaneous ##
+
 1. how to debug `module_init`?
+
+## Reference ##
+
+### KGDB ###
+https://www.kernel.org/doc/Documentation/gdb-kernel-debugging.txt
+
+```
+The kernel debugger kgdb, hypervisors like QEMU or JTAG-based hardware
+interfaces allow to debug the Linux kernel and its modules during runtime
+using gdb. Gdb comes with a powerful scripting interface for python. The
+kernel provides a collection of helper scripts that can simplify typical
+kernel debugging steps. This is a short tutorial about how to enable and use
+them. It focuses on QEMU/KVM virtual machines as target, but the examples can
+be transferred to the other gdb stubs as well.
+```
+I actually use VMware Workstation as the virtualization solution...
+
+### SysRq ###
+https://www.kernel.org/doc/Documentation/sysrq.txt
+
+```
+It is a 'magical' key combo you can hit which the kernel will respond to
+regardless of whatever else it is doing, unless it is completely locked up.
+...
+On x86   - You press the key combo 'ALT-SysRq-<command key>'. Note - Some
+           keyboards may not have a key labeled 'SysRq'. The 'SysRq' key is
+           also known as the 'Print Screen' key. Also some keyboards cannot
+           handle so many keys being pressed at the same time, so you might
+           have better luck with "press Alt", "press SysRq", "release SysRq",
+           "press <command key>", release everything.
+```
+Not like a user world application, we use SysRq to break running kernel into debugger.
+
+
