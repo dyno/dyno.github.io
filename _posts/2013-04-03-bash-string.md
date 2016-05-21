@@ -60,7 +60,7 @@ x="2"; y=3
 echo $(($x + $y))
 ```
 
-## Reference ##
+## Reference
 
 * Advanced Bash Scripting Guide, http://tldp.org/LDP/abs/html/refcards.html
 * PLEAC - Programming Language Examples Alike Cookbook, http://pleac.sourceforge.net/
