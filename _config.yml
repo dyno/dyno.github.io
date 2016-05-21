@@ -10,7 +10,7 @@ lsi: false
 
 exclude: [zold, LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
 
-# https://github.com/swanson/lagom 
+# https://github.com/swanson/lagom
 # more configure options @ _data/theme.yml
 title: Happy Blooming
 name: Dyno Fu
@@ -18,7 +18,7 @@ name: Dyno Fu
 email: "'ZHluby5mdUBnbWFpbC5jb20='.decode('base64')"
 #url: http://dyno.github.io
 url: http://blog.dynofu.me
-description: 
+description:
     Reality, with all its ambiguities, does the job just fine. - GEORGE DYSON
 
 # http://ajoz.github.io/2014/06/29/i-want-my-github-flavored-markdown/
