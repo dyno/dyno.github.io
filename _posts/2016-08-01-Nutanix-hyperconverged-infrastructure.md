@@ -15,7 +15,9 @@ categories:
 * Fault Tolerance - Database System: Redo/Undo Log, Journaling Filesystem
 * Virtualization - Virtual Machine/Disk abstraction
 
-## the Implementation
+## the Nutanix System
+
+http://nutanixbible.com/
 
 ### the Model
 
@@ -30,12 +32,12 @@ vDisk -> file handle, offset, size
 * Metadata: Cassandra
   - Consistent Hashing
   - Paxos for consistency
-* Data: Homegrown
+* Data:
   - fuse alike API, QoS
   - Journaling
   - Layered Cache
 
-### the Protocol
+### the Interface Protocol
 
 * NFS - VMware ESXi
 * SMB - Microsoft HyperV
@@ -56,6 +58,4 @@ https://www.quora.com/What-is-the-technology-stack-at-Nutanix
 * https://gflags.github.io/gflags/
 * https://github.com/google/protobuf
 * https://google.github.io/flatbuffers/
-
-http://nutanixbible.com/
 
