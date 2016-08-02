@@ -1,3 +1,10 @@
+---
+layout: post
+title: Nutanix Hyperconverged Infrastructure
+categories:
+- post
+---
+
 ## The Hyperconverged Infrastructure Ideas
 
 * Distributed System - GFS, The Google File System, Map Reduce
@@ -45,6 +52,7 @@ vDisk -> file handle, offset, size
 ## Other Open Source Technology
 
 https://www.quora.com/What-is-the-technology-stack-at-Nutanix
+
 * https://gflags.github.io/gflags/
 * https://github.com/google/protobuf
 * https://google.github.io/flatbuffers/
