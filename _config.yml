@@ -11,9 +11,7 @@ kramdown:
     input: GFM
     hard_wrap: false
     syntax_highlighter: rouge
-gems:
-    - jekyll-coffeescript
-    - jekyll-paginate
+gems: [jekyll-paginate]
 
 ## github will overwrite any configuration list here ##
 #lsi: false
