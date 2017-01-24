@@ -12,6 +12,7 @@ kramdown:
     hard_wrap: false
     syntax_highlighter: rouge
 gems: [jekyll-paginate]
+future: true
 
 ## github will overwrite any configuration list here ##
 #lsi: false
