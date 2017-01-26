@@ -5,13 +5,17 @@ categories:
 - post
 ---
 
+When processing log, we need to express the time in its local timezone for correlation.
+most of the time we don't need te fancy ```datetime``` and ```time``` is good enough for us.
+
 ## Time String <=> Seconds Since Epoc
 
 ```python
 from time import (tzset,
     strptime, strftime,
     mktime,
-    localtime, gmtime)
+    localtime, gmtime,
+    struct_time)
 from calendar import timegm
 
 format = "%Y-%m-%dT%H:%M:%S%p"
@@ -41,6 +45,13 @@ print("%d => %s" % (epoc, strftime(format, t)))
 t = gmtime(epoc)
 print("%d => %s" % (epoc, strftime(format, t)))
 # 1485200620 => 2017-01-23T19:43:40PM
+
+# manipulate struct_time
+tl = list(t)
+tl[0] = 2018
+t = struct_time(tl)
+print("=> %s" % strftime(format, t))
+#=> 2018-01-23T19:43:40PM
 ```
 
 ## Working With Timezone (without 3rd party lib)
