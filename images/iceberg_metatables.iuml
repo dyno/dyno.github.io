@@ -1,0 +1,64 @@
+@startuml
+'!theme toy
+left to right direction
+
+entity snapshot {
+	* manifest_list
+	---
+	committed_at
+	* snapshot_id
+	parent_id
+	operation
+	summary
+}
+
+entity manifest {
+	* manifest_path
+	---
+	manifest_length
+	partition_spec_id
+	content
+	sequence_number
+	min_sequence_number
+	* added_snapshot_id : <<FK>>
+	added_data_files_count
+	existing_data_files_count
+	deleted_data_files_count
+	added_rows_count
+	existing_rows_count
+	deleted_rows_count
+	partitions
+}
+
+entity file {
+ * file_path
+ ---
+ content
+ file_format
+ record_count
+ file_size_in_bytes
+ column_sizes
+ value_counts
+ null_value_counts
+ nan_value_counts
+ lower_bounds
+ upper_bounds
+ key_metadata
+ split_offsets
+ equality_ids
+}
+
+note top of snapshot
+metadata.json | jq .snapshots
+endnote
+note top of manifest
+manifest list - snap-*.avro
+endnote
+note top of file
+manifest file - *m0.avro
+endnote
+
+snapshot ||-- manifest
+manifest ||--o{ snapshot
+manifest ||-- file
+@enduml

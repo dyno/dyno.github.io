@@ -1,0 +1,146 @@
+@startuml
+'!theme sketchy-outline
+'!theme toy
+
+!$COLOR0 = "#EDE7DC"
+!$COLOR1 = "#DCD2CC"
+!$COLOR2 = "#CCAFA5"
+!$COLOR3 = "#BDC3CB"
+
+/'
+!$COLOR0 = "#E5F9DB"
+!$COLOR1 = "#A0D8B3"
+!$COLOR2 = "#A2A378"
+!$COLOR3 = "#83764F"
+'/
+
+top to bottom direction
+
+skinparam frame {
+  borderColor Transparent
+  'fontColor Transparent
+}
+skinparam database {
+  borderColor Black
+}
+'skinparam linetype ortho
+
+database catalog as "Iceberg Catalog" $COLOR3 {
+	file table as "db1.table1" {
+		circle metadata_location
+	}
+}
+
+frame metadata as "__ metadata layer __" {
+	file metadata0 as "<0000>-<uuid>.metadata.json" $COLOR0;line.dotted {
+		circle metadata0_current_snapshot_id as "current_snapshot_id"
+		circle metadata0_snapshots as "snapshots"
+	}
+	file s0 as "manifest_list - snap-<snap_id0>-1-<uuid>.avro" $COLOR0;line.dotted {
+		circle s0_i as "manifest_path[]"
+	}
+
+	file metadata1 as "<0001>-<uuid>.metadata.json" $COLOR1;line.dotted {
+		circle metadata1_current_snapshot_id as "current_snapshot_id"
+		circle metadata1_snapshots as "snapshots"
+	}
+	file s1 as "manifest_list - snap-<snap_id1>-1-<uuid>.avro" $COLOR1;line.dotted {
+		circle s1_i as "manifest_path[]"
+	}
+
+	file metadata2 as "<0002>-<uuid>.metadata.json" $COLOR2;line.dotted {
+		circle metadata2_current_snapshot_id as "current_snapshot_id"
+		circle metadata2_snapshots as "snapshots"
+	}
+	file s2 as "manifest_list - snap-<snap_id2>-1-<uuid>.avro" $COLOR2;line.dotted {
+		circle s2_i as "manifest_path[]"
+	}
+
+	file metadata3 as "<0003>-<uuid>.metadata.json" $COLOR3 {
+		circle metadata3_current_snapshot_id as "current_snapshot_id"
+		circle metadata3_snapshots as "snapshots"
+	}
+	file s3 as "manifest_list - snap-<snap_id3>-1-<uuid>.avro" $COLOR3 {
+		circle s3_i as "manifest_path[]"
+	}
+
+	file manifest0 as "manifest - <uuid0>-m0.avro" $COLOR0;line.dotted {
+		circle df0_i as "data-file"
+	}
+	file manifest1 as "manifest - <uuid1>-m0.avro" $COLOR1;line.dotted {
+		circle df1_i as "data-file"
+	}
+	file manifest2 as "manifest - <uuid2>-m0.avro" $COLOR2;line.dotted {
+		circle df2_i as "data-file"
+	}
+	file manifest3 as "manifest - <uuid3>-m0.avro" $COLOR3 {
+		circle df3_i as "data-file"
+	}
+}
+
+frame data as "__ data layer __" {
+	collections files0 $COLOR0 [
+		data files
+	]
+ 	collections files1 $COLOR1 [
+		data files
+	]
+	collections files2 $COLOR2 [
+		data files
+	]
+}
+
+metadata_location -[dotted]--> metadata0 : 0 - df.writeTo(table).overwrite(partition)
+metadata_location -[dotted]--> metadata1 : 1 - df.writeTo(table).overwrite(partition)
+metadata_location -[dotted]--> metadata2 : 2 - df.writeTo(table).overwrite(partition)
+metadata_location --> metadata3 : 3 - CALL system.rewrite_manifests
+
+/'
+note top of metadata0
+  df.writeTo(table).overwrite(partition) => operation:overwrite
+endnote
+note top of metadata1
+  df.writeTo(table).overwrite(partition) => operation:overwrite
+endnote
+note top of metadata2
+  df.writeTo(table).overwrite(partition) => operation:overwrite
+endnote
+note right of metadata3
+  CALL system.rewrite_manifests => operation:replace
+endnote
+'/
+
+metadata0 -[hidden]r-> metadata1
+metadata1 -[hidden]r-> metadata2
+
+metadata0_current_snapshot_id --> s0
+metadata1_current_snapshot_id --> s1
+metadata2_current_snapshot_id --> s2
+metadata3_current_snapshot_id --> s3
+
+/'
+metadata3_snapshots --> s0
+metadata3_snapshots --> s1
+metadata3_snapshots --> s2
+metadata3_snapshots --> s3
+'/
+
+s0_i --> manifest0
+s1_i --> manifest0
+s1_i --> manifest1
+
+s2_i --> manifest0
+s2_i --> manifest1
+s2_i --> manifest2
+
+s3_i --> manifest3
+
+df0_i --> files0
+df1_i --> files1
+df2_i --> files2
+
+df3_i --> files0
+df3_i --> files1
+df3_i --> files2
+
+@enduml
