@@ -5,7 +5,7 @@ categories:
 - post,iceberg,spark,parquet
 ---
 
-![Table Operation and Iceberg Metadata](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/dyno/dyno.github.io/master/images/iceberg.iuml | width=600)
+![Table Operation and Iceberg Metadata](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/dyno/dyno.github.io/master/images/iceberg.iuml)
 
 ## Key Concepts
 
